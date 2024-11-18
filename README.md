@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Mario Flex Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -13,31 +14,35 @@
             flex-wrap: wrap;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            gap: 20px;
+            background: linear-gradient(135deg, #ffcc00, #ff6699);
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
         }
 
         .card-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            perspective: 1000px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .card {
             width: 300px;
             height: 400px;
-            background-color: #f6c957;
+            background: linear-gradient(135deg, #ff9e00, #ff6347);
             color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 20px;
-            font-family: 'Arial', sans-serif;
-            border-radius: 10px;
+            font-family: 'Press Start 2P', cursive;
+            border-radius: 15px;
             cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             transform-style: preserve-3d;
-            transition: transform 0.6s;
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+            will-change: transform;
         }
 
         .card-content {
@@ -48,19 +53,23 @@
             backface-visibility: hidden;
             padding: 20px;
             text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
 
         .card-front {
-            background-color: #f6c957;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
         }
 
         .card-back {
-            background-color: #e74c3c;
+            background: rgba(255, 99, 71, 0.9);
             transform: rotateY(180deg);
+            border-radius: 15px;
         }
 
         .card:hover {
             transform: rotateY(180deg);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
         }
 
         h3 {
@@ -71,11 +80,22 @@
         p {
             font-size: 18px;
             margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
         }
 
     </style>
 </head>
 <body>
+    <div class="title">Super Mario Quiz</div>
     <div class="card-container">
         <!-- Cartões com perguntas e respostas sobre Super Mario -->
         
@@ -207,7 +227,7 @@
     </div>
 
     <script>
-        // O efeito de rotação 3D é totalmente controlado pelo CSS
+        // Efeito de rotação 3D e transições já estão controlados pelo CSS
     </script>
 </body>
 </html>
