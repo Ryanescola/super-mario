@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario Flex Card</title>
+    <title>Super Mario Quiz</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,7 +14,7 @@
             flex-wrap: wrap;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ffcc00, #ff6699);
+            background-color: #87CEEB; /* Azul claro inspirando o céu do Reino dos Cogumelos */
             font-family: 'Roboto', sans-serif;
             overflow: hidden;
         }
@@ -24,25 +24,27 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .card {
-            width: 300px;
-            height: 400px;
-            background: linear-gradient(135deg, #ff9e00, #ff6347);
+            width: 320px;
+            height: 450px;
+            background-color: #ffcc00; /* Amarelo brilhante para representar o tema do Super Mario */
             color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 22px;
             font-family: 'Press Start 2P', cursive;
-            border-radius: 15px;
+            border-radius: 20px;
             cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
             transform-style: preserve-3d;
             transition: transform 0.6s ease, box-shadow 0.3s ease;
             will-change: transform;
+            overflow: hidden;
         }
 
         .card-content {
@@ -53,45 +55,70 @@
             backface-visibility: hidden;
             padding: 20px;
             text-align: center;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .card-front {
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
+            background: #ff5733; /* Cor vermelha vibrante, remetendo ao chapéu do Mario */
+            border-radius: 20px;
+            box-sizing: border-box;
         }
 
         .card-back {
-            background: rgba(255, 99, 71, 0.9);
+            background: #2980b9; /* Azul de fundo, representando o céu do Reino dos Cogumelos */
             transform: rotateY(180deg);
-            border-radius: 15px;
+            border-radius: 20px;
+            color: #fff;
         }
 
         .card:hover {
             transform: rotateY(180deg);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         h3 {
             margin: 0;
-            font-size: 22px;
+            font-size: 24px;
+            color: #fff;
         }
 
         p {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 10px;
             font-weight: 500;
+            color: #fff;
         }
 
         .title {
-            font-size: 28px;
+            font-size: 35px;
             font-weight: 700;
             color: #fff;
             text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
         }
 
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .card-container {
+                gap: 20px;
+            }
+            .card {
+                width: 280px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .card {
+                width: 90%;
+                height: 350px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -180,54 +207,4 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-content card-front">
-                <h3>Qual é o poder de Mario ao comer uma flor de fogo?</h3>
-            </div>
-            <div class="card-content card-back">
-                <p>Quando Mario come uma flor de fogo, ele pode atirar bolas de fogo!</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content card-front">
-                <h3>Como Mario consegue se transformar em uma estrela?</h3>
-            </div>
-            <div class="card-content card-back">
-                <p>Mario se transforma em uma estrela quando pega uma Super Estrela!</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content card-front">
-                <h3>Quem é o irmão de Luigi?</h3>
-            </div>
-            <div class="card-content card-back">
-                <p>Luigi tem um irmão chamado Mario!</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content card-front">
-                <h3>Qual é o nome do carro que Mario usa em "Mario Kart"?</h3>
-            </div>
-            <div class="card-content card-back">
-                <p>Mario usa o "Macho Mario" no jogo "Mario Kart"!</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-content card-front">
-                <h3>Qual é o nome do mundo onde Mario vive?</h3>
-            </div>
-            <div class="card-content card-back">
-                <p>Mario vive no "Reino dos Cogumelos"!</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Efeito de rotação 3D e transições já estão controlados pelo CSS
-    </script>
-</body>
-</html>
+   
